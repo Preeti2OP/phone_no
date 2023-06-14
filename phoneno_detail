@@ -1,0 +1,18 @@
+##details of a phone number
+import phonenumbers
+from phonenumbers import carrier,timezone,geocoder
+no=input("enter your phone no:")
+##details of no
+pn=phonenumbers.parse(no)
+time=timezone.time_zones_for_number(pn)
+##company of sim
+carr=carrier.name_for_number(pn,"en")
+##registration country
+reg=geocoder.description_for_number(pn,"en")
+##cheak whether phone no is valid for that coountry or not
+valid=phonenumbers.is_valid_number_for_region  
+print(pn)
+print(time)
+print(carr)
+print(reg)
+print(valid)
